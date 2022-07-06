@@ -1,0 +1,46 @@
+.grouping {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  padding: 64px 40px;
+  font-size: 1.1rem;
+  transition: all 0.4s ease-in-out;
+}
+.grouping p {
+  font-size: 1.55rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 20px;
+}
+.grouping a {
+  display: flex;
+  text-decoration: none;
+  color: #3C4858;
+  padding: 20px;
+}
+.grouping a span {
+  flex-grow: 1;
+}
+.grouping a time {
+  white-space: nowrap;
+}
+.grouping a:hover {
+  background: #F8F9FB;
+  color: #4CA5CE;
+  border-radius: 6px;
+}
+@media screen and (max-width: 600px) {
+  .grouping {
+    width: 100%;
+    max-width: 700px;
+    padding: 50px 15px;
+    font-size: 1rem;
+  }
+  .grouping p {
+    font-size: 1.5rem;
+  }
+  .grouping a {
+    padding: 15px;
+  }
+}
