@@ -1,0 +1,23 @@
+<%- partial('_partial/header',{name:'categories'}) %>
+
+<div class="categories">
+    <%- partial('_widget/header_body',{message:theme.headers.categories.message,icon:theme.headers.categories.icon}) %>
+    <div class="categories-content" id="content">
+        <div class="categories-content-data">
+				<div class="categories-class">
+					<% site.categories.map(function(category,index){  %>
+						<a class="categories-class-card" href="<%- url_for(category.path) %>"
+							style="background-image: url('<%- theme.default_cover %>&id=<%- parseInt(Math.random()*(10000-1)+1) %>');"
+						>
+							<span class="categories-class-card-title"><%= category.name %></span>
+							<div class="categories-class-card-number">
+								<span>
+									<span class="categories-length"><%= category.length %></span> 篇
+								</span>
+							</div>
+						</a>
+					<% }) %>
+				</div>
+        </div>
+    </div>
+</div>

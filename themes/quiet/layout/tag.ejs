@@ -1,0 +1,27 @@
+
+<%- partial('_partial/header',{name:'tags'}) %>
+<%
+    let date_cursor = 'xxx'
+    page.title =  "标签:" + page.tag
+%>
+
+<%
+    let years = {};
+    page.posts.each(function (post) {
+        if(date(post.date, "YYYY") != date_cursor) {
+            date_cursor = date(post.date, "YYYY")
+            if(years[date_cursor] === undefined){
+                years[date_cursor] = []
+            }
+        }
+        years[date_cursor].push(post);
+    })
+%>
+<div class="tag">
+    <%- partial('_widget/header_body',{message:"文章标签："+page.tag,icon:theme.headers.tags.icon}) %>
+    <div class="tag-content" id="content">
+        <div class="tag-content-data">
+            <%- partial('_widget/grouping',{data:years,keys:Object.keys(years).reverse()}) %>
+        </div>
+    </div>
+</div>
